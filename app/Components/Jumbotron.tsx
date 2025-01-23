@@ -58,7 +58,7 @@ const Jumbotron = () => {
         >
           <div className="flex flex-col space-y-6">
             <a
-              href="www.linkedin.com/in/alfin-dwi-chandra-41208117a"
+              href="https://www.linkedin.com/in/alfin-dwi-chandra-41208117a"
               className="text-gray-600 hover:text-blue-600 hover:bg-teal-400 hover:rounded-xl hover:p-3 transition-all"
             >
               <Linkedin size={24} />

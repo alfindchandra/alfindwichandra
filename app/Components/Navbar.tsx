@@ -34,7 +34,7 @@ const Navbar = () => {
               <img
                 src="/images/home.png"
                 alt="Workflow"
-                className="md:h-14 w-10 h-10 md:w-14 mr-1 rounded-full border-2 border-teal-800 bg-primary"
+                className="md:h-14 hidden md:block w-10 h-10 md:w-14 mr-1 rounded-full border-2 border-teal-800 bg-primary"
               />
               <span className="text-2xl font-extrabold bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
                 Alfin Dwi Chandra

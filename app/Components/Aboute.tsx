@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 const AboutMe = () => {
   const skills = [

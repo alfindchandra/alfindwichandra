@@ -5,11 +5,11 @@ import Image from "next/image";
 const projectsData = [
   {
     id: 1,
-    title: "Dopefolio",
+    title: "Monkey D'Coffe",
     description:
-      "Dopefolio is a successful Open-Source project that I created which have been featured on some of the biggest tech sites like CSS-Tricks, Hostinger, etc & used by thousands of developers globally",
+      "Monkey D'Coffe is a coffee shop and I created their website from scratch using the frontend tools I know.",
     image: "/images/home.png",
-    link: "/projects/dopefolio",
+    link: "/Components/MonkeyDcoffee",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projectsData = [
     description:
       "Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.",
     image: "/images/home.png",
-    link: "/",
+    link: "/Components/dopefolio",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const projectsData = [
     description:
       "I re-created the frontend of Boreal Coffee's official web app because I got attracted to their beautiful UI. It was a great experience for me to build the entire frontend.",
     image: "/images/home.png",
-    link: "/projects/boreal-coffee-clone",
+    link: "/Components/boreal",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const projectsData = [
     description:
       "Crown is a web template that I created targeting the restaurant and food industry which anyone can use to present their business online.",
     image: "/images/home.png",
-    link: "/projects/crown-template",
+    link: "/Components/crown-template",
   },
 ];
 
@@ -42,8 +42,8 @@ const ProjectsPage: React.FC = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-primary mb-4">Projects</h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Here you will find some of the personal and client projects that I
             created, with each project containing its own case study
           </p>
@@ -65,15 +65,15 @@ const ProjectsPage: React.FC = () => {
                 />
               </div>
               <div className="md:w-1/2 p-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                <h3 className="text-2xl font-semibold text-white mb-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-6">{project.description}</p>
+                <p className="text-gray-300 mb-6">{project.description}</p>
                 <Link
                   href={project.link}
-                  className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
+                  className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-7 py-2.5 text-center me-2 mb-2"
                 >
-                  Case Study
+                  Lihat
                 </Link>
               </div>
             </div>

@@ -53,7 +53,11 @@ const projectDetails = {
   // Add other project details similarly
 };
 
-const ProjectDetailPage = ({ params }: { params: { projectId: string } }) => {
+type ProjectDetailProps = {
+  params: { projectId: string };
+};
+
+const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
   const project =
     projectDetails[params.projectId as keyof typeof projectDetails];
 

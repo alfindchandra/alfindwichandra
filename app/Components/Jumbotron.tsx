@@ -1,13 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  Linkedin,
-  Twitter,
-  Instagram,
-  Github,
-  Book,
-  FileInput,
-} from "lucide-react";
+import { Linkedin, Twitter, Instagram, Github, Book } from "lucide-react";
 
 const TypewriterText = ({
   text,

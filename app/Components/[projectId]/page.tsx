@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Laptop } from "lucide-react";
 
-interface ProjectDetailProps {
+interface ProjectDetailPage {
   params: {
     projectId: string;
   };
@@ -53,7 +53,7 @@ const projectDetails = {
   // Add other project details similarly
 };
 
-const ProjectDetailPage: React.FC<ProjectDetailProps> = ({ params }) => {
+const ProjectDetailPage = ({ params }: { params: { projectId: string } }) => {
   const project =
     projectDetails[params.projectId as keyof typeof projectDetails];
 

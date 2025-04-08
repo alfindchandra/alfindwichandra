@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Laptop } from "lucide-react";
 
-interface ProjectDetailPage {
+type ProjectDetailProps = {
   params: {
     projectId: string;
   };
-}
+};
 
 const projectDetails = {
   MonkeyDcoffee: {
@@ -53,17 +53,15 @@ const projectDetails = {
   // Add other project details similarly
 };
 
-type ProjectDetailProps = {
+const ProjectDetailPage = async ({
+  params,
+}: {
   params: { projectId: string };
-};
-
-const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
+}) => {
   const project =
     projectDetails[params.projectId as keyof typeof projectDetails];
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+  if (!project) return <div>Project not found</div>;
 
   return (
     <div className="container mx-auto px-6 py-12">

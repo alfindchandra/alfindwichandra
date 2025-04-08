@@ -46,7 +46,7 @@ const Jumbotron = () => {
     <>
       <div className="min-h-screen flex" id="home">
         <div
-          className={`fixed left-0 top-1/2 transform -translate-y-1/2 bg-slate-300 p-4 shadow-lg shadow-primary rounded-r-xl hidden sm:block transition-transform duration-300 
+          className={`fixed left-0 top-1/2 transform z-50 -translate-y-1/2 bg-slate-300 p-4 shadow-lg shadow-primary rounded-r-xl hidden sm:block transition-transform duration-300 
             ${IsVisible ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="flex flex-col space-y-6">

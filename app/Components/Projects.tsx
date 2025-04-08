@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
+
 import { Code, Globe, Github } from "lucide-react";
+import Image from "next/image";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -102,9 +104,10 @@ export default function Projects() {
               className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
               <div className="relative">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  fill
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

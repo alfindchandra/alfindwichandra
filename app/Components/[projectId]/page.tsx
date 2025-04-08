@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Laptop, Github } from "lucide-react";
+import { Laptop } from "lucide-react";
 
 interface ProjectDetailProps {
   params: {

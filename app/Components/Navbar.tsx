@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0 ">
             <a href="" className="flex items-center">
-              <img
+              <Image
                 src="/images/home.png"
                 alt="Workflow"
                 className="md:h-14 hidden md:block w-10 h-10 md:w-14 mr-1 rounded-full border-2 border-teal-800 bg-primary"

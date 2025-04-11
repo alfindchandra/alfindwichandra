@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { Code, Globe, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import Image from "next/image";
 
 export default function Projects() {

@@ -5,74 +5,74 @@ import { Code, Globe, Github } from "lucide-react";
 import Image from "next/image";
 
 export default function Projects() {
-  const [filter, setFilter] = useState("all");
+  const [filter] = useState("all");
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Dashboard",
+      title: "Inovasi Adiwarna Raya",
       description:
-        "Dashboard admin untuk mengelola produk, pesanan, dan pengguna dengan visualisasi data interaktif.",
-      image: "/api/placeholder/600/350",
+        "Inovasi Adiwarna Raya adalah perusahaan teknologi loT terkemuka yang berbasis di Indonesia.",
+      image: "/images/inovasiadi.png",
       category: "web",
-      tags: ["Next.js", "Tailwind CSS", "MongoDB", "Redux"],
+      tags: ["Laravel", "Tailwind CSS"],
       demoUrl: "https://example.com/demo",
-      githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
+      githubUrl: "https://github.com/alfindchandra/Adiwarna_Raya",
     },
     {
       id: 2,
-      title: "Weather App",
+      title: "Monkey D'coffee",
       description:
-        "Aplikasi cuaca real-time dengan fitur perkiraan 7 hari dan peringatan cuaca.",
-      image: "/api/placeholder/600/350",
+        "Mokey D'coffee merupkan coffee shop yang bagus di Bojonegoro, coffee shop yang bernuansa alam. ",
+      image: "/images/coffee.png",
       category: "mobile",
-      tags: ["React Native", "API Integration", "Geolocation"],
+      tags: ["Laravel", "Boostrep"],
       demoUrl: "https://example.com/weather-app",
-      githubUrl: "https://github.com/yourusername/weather-app",
+      githubUrl: "https://github.com/alfindchandra/kopi-shop",
     },
     {
       id: 3,
-      title: "Blog Platform",
+      title: "Mazabuta Grub",
       description:
-        "Platform blog dengan fitur markdown editor dan sistem komentar.",
-      image: "/api/placeholder/600/350",
+        "Mazabuta Group - Fokus dalam bisnis yang berkaitan dengan pengelolaan lingkungan dan kebersihan kota. ",
+      image: "/images/maza1.png",
       category: "web",
-      tags: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+      tags: ["Laravel", "Tailwind CSS"],
       demoUrl: "https://example.com/blog",
-      githubUrl: "https://github.com/yourusername/blog-platform",
+      githubUrl: "https://github.com/alfindchandra/MazabutaGrub",
     },
     {
       id: 4,
-      title: "Task Management App",
+      title: "joki tugas online",
       description:
-        "Aplikasi manajemen tugas dengan fitur drag-and-drop dan pengingat.",
-      image: "/api/placeholder/600/350",
+        "web site ini untuk memudahkan pekerja untuk menyelesaikan pekerjaan di rumah. ",
+      image: "/images/joki1.png",
       category: "web",
-      tags: ["React", "Firebase", "Tailwind CSS"],
+      tags: ["React", "Next.js", "Tailwind CSS"],
       demoUrl: "https://example.com/task-app",
-      githubUrl: "https://github.com/yourusername/task-management",
+      githubUrl: "https://github.com/alfindchandra/Jojone_jokitugasonline",
     },
     {
       id: 5,
-      title: "Restaurant Finder",
+      title: "Toko Bu Joni",
       description:
-        "Aplikasi pencari restoran dengan integrasi peta dan ulasan pengguna.",
-      image: "/api/placeholder/600/350",
-      category: "mobile",
-      tags: ["React Native", "Google Maps API", "Firebase"],
+        "Web site ini untuk memudahkan peanggan untuk membeli makanan dan minuman di Toko Bu Joni. ",
+      image: "/images/bujoni1.png",
+      category: "web",
+      tags: ["Laravel", "Tailwind CSS"],
       demoUrl: "https://example.com/restaurant-finder",
-      githubUrl: "https://github.com/yourusername/restaurant-finder",
+      githubUrl: "https://github.com/alfindchandra/tokowa",
     },
     {
       id: 6,
-      title: "Crypto Tracker",
+      title: "Gor Bojonegoro",
       description:
-        "Dashboard untuk melacak harga cryptocurrency dengan grafik dan notifikasi harga.",
-      image: "/api/placeholder/600/350",
+        "Web Site merupakan hasil pemikiran saya tentang kota Bojonegoro, agar gor ini mudah dikunjungi. ",
+      image: "/images/gor.png",
       category: "web",
-      tags: ["Next.js", "Chart.js", "CoinGecko API"],
+      tags: ["Laravel", "Tailwind CSS"],
       demoUrl: "https://example.com/crypto-tracker",
-      githubUrl: "https://github.com/yourusername/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra/",
     },
   ];
 
@@ -103,23 +103,15 @@ export default function Projects() {
               key={project.id}
               className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
-              <div className="relative">
+              <div className="relative w-full h-56">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="w-full h-48 object-cover"
+                  className=" object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
-                    >
-                      <Globe size={18} />
-                    </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"

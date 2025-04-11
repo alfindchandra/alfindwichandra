@@ -6,25 +6,25 @@ export default function Testimonials() {
       id: 1,
       content:
         "Sangat profesional dan memberikan hasil yang melebihi ekspektasi. Proyek website e-commerce kami selesai tepat waktu dengan fitur yang lengkap.",
-      name: "Andi Firmansyah",
-      position: "CEO, Tech Solutions",
-      image: "/api/placeholder/100/100",
+      name: "Liva Puji Arochim",
+      position: "Mahasiswa, Manajement",
+      image: "/images/home.png",
     },
     {
       id: 2,
       content:
         "Kemampuan teknis yang luar biasa dan selalu responsif terhadap perubahan kebutuhan. Solusi yang diberikan selalu efisien dan mudah dikelola.",
       name: "Siti Rahayu",
-      position: "Marketing Director, StartupID",
-      image: "/api/placeholder/100/100",
+      position: "Marketing, Mazabuta Grub",
+      image: "/images/asd.jpg",
     },
     {
       id: 3,
       content:
         "Komunikasi sangat baik selama pengerjaan proyek. Mampu menerjemahkan ide kami menjadi aplikasi yang user-friendly dan estetis.",
       name: "Budi Santoso",
-      position: "Product Manager, Digital Kreasi",
-      image: "/api/placeholder/100/100",
+      position: "Product Manager, Adiwarna Raya",
+      image: "/images/maza.jpg",
     },
   ];
 
@@ -47,12 +47,15 @@ export default function Testimonials() {
               className="bg-gray-800 rounded-lg p-8 shadow-lg"
             >
               <div className="flex items-center mb-6">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className="w-14 h-14 rounded-full object-cover mr-4"
-                />
+                <div className="w-14 h-14 relative mr-3">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    fill
+                    className="rounded-full object-cover mr-4"
+                  />
+                </div>
+
                 <div>
                   <h4 className="font-bold text-lg">{testimonial.name}</h4>
                   <p className="text-blue-400">{testimonial.position}</p>

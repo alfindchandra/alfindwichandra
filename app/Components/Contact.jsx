@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react"; // Menambahkan MessageCircle jika diperlukan untuk ikon WhatsApp
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+
+  const whatsappNumber = "6281382176161"; // Nomor WhatsApp tanpa tanda '+' atau spasi, dimulai dengan kode negara
 
   const handleChange = (e) => {
     setFormData({
@@ -19,79 +21,108 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here (backend integration)
-    console.log(formData);
-    // Reset form
+
+    // Buat pesan untuk WhatsApp
+    const whatsappMessage = `
+Halo, saya ${formData.name} 
+Email: ${formData.email} 
+Subjek: ${formData.subject} 
+Pesan: ${formData.message}
+    `.trim(); // %0A adalah kode URL encoding untuk newline (baris baru)
+
+    // Encode pesan untuk URL agar aman
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Buat URL WhatsApp
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Buka WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    // Anda bisa memilih untuk menampilkan alert atau tidak setelah membuka WhatsApp
+    // alert("Anda akan diarahkan ke WhatsApp untuk mengirim pesan.");
+
+    // Reset form setelah (mencoba) mengirim
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
     });
-    // Show success message
-    alert("Pesan berhasil dikirim!");
   };
 
   return (
-    <section id="contact" className="py-20 ">
+    <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-gray-300">Contact Me</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Tertarik untuk bekerja sama? Hubungi saya untuk diskusi lebih lanjut
-            tentang proyek Anda.
+          <h2 className="text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+            Hubungi Saya
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Tertarik untuk berdiskusi atau berkolaborasi? Jangan ragu untuk
+            menghubungi saya melalui formulir ini atau langsung melalui
+            WhatsApp.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {" "}
+          {/* Added items-start for better alignment */}
           <div>
             <h3 className="text-2xl font-bold mb-6 text-gray-200">
-              Get In Touch
+              Informasi Kontak
             </h3>
 
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white">
+                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white shadow-lg">
                   <Mail size={20} />
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium text-gray-300">Email</h4>
-                  <p className="text-gray-600">alfindwichandra714@gmail.com</p>
+                  <p className="text-gray-400">
+                    alfindwichandra714@gmail.com
+                  </p>{" "}
+                  {/* Changed text color for better contrast */}
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white">
+                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white shadow-lg">
                   <Phone size={20} />
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-gray-300">Phone</h4>
-                  <p className="text-gray-600">+62 813 8217 6161</p>
+                  <h4 className="text-lg font-medium text-gray-300">Telepon</h4>
+                  <p className="text-gray-400">+62 813 8217 6161</p>{" "}
+                  {/* Changed text color */}
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white">
+                <div className="flex-shrink-0 bg-blue-600 p-3 rounded-lg text-white shadow-lg">
                   <MapPin size={20} />
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-gray-300">
-                    Location
-                  </h4>
-                  <p className="text-gray-600">Bojonegoro, Jawa Timur</p>
+                  <h4 className="text-lg font-medium text-gray-300">Lokasi</h4>
+                  <p className="text-gray-400">
+                    Bojonegoro, Jawa Timur, Indonesia
+                  </p>{" "}
+                  {/* Changed text color and added Indonesia */}
                 </div>
               </div>
             </div>
 
             <div className="mt-10">
               <h3 className="text-2xl font-bold mb-6 text-gray-300">
-                Follow Me
+                Ikuti Saya
               </h3>
               <div className="flex space-x-4">
+                {/* Social media links - make sure to update href="#" with actual links */}
                 <a
-                  href="#"
-                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                  href="#" // Ganti dengan link Facebook atau LinkedIn Anda
+                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg"
+                  aria-label="Facebook"
                 >
                   <svg
                     className="w-5 h-5"
@@ -107,8 +138,9 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="#"
-                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                  href="#" // Ganti dengan link Twitter atau platform lain Anda
+                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg"
+                  aria-label="Twitter"
                 >
                   <svg
                     className="w-5 h-5"
@@ -120,8 +152,9 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="#"
-                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                  href="#" // Ganti dengan link Instagram Anda
+                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg"
+                  aria-label="Instagram"
                 >
                   <svg
                     className="w-5 h-5"
@@ -136,36 +169,22 @@ export default function Contact() {
                     ></path>
                   </svg>
                 </a>
-                <a
-                  href="#"
-                  className="bg-gray-800 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
-
-          <div className="bg-gray-900 p-8 rounded-lg shadow-md">
+          <div className="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700">
+            {" "}
+            {/* Changed bg to gray-800 for contrast */}
             <h3 className="text-2xl font-bold mb-6 text-gray-200">
-              Send Message
+              Kirim Pesan
             </h3>
-
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-300 mb-2">
-                  Your Name
+                <label
+                  htmlFor="name"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
+                  Nama Anda
                 </label>
                 <input
                   type="text"
@@ -173,14 +192,18 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border text-gray-900 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                  placeholder="Nama Lengkap Anda"
                   required
                 />
               </div>
 
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-300 mb-2">
-                  Your Email
+                <label
+                  htmlFor="email"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
+                  Email Anda
                 </label>
                 <input
                   type="email"
@@ -188,14 +211,18 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border text-gray-900 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                  placeholder="email@example.com"
                   required
                 />
               </div>
 
               <div className="mb-6">
-                <label htmlFor="subject" className="block text-gray-300 mb-2">
-                  Subject
+                <label
+                  htmlFor="subject"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
+                  Subjek
                 </label>
                 <input
                   type="text"
@@ -203,14 +230,18 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border text-gray-900 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                  placeholder="Subjek Pesan Anda"
                   required
                 />
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-300 mb-2">
-                  Your Message
+                <label
+                  htmlFor="message"
+                  className="block text-gray-300 mb-2 font-medium"
+                >
+                  Pesan Anda
                 </label>
                 <textarea
                   id="message"
@@ -218,17 +249,19 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 border text-gray-900 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+                  placeholder="Tulis pesan Anda di sini..."
                   required
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center hover:bg-green-700 transition-colors duration-300 w-full md:w-auto shadow-md" // Changed button color to green for WhatsApp
               >
-                Send Message
-                <Send size={18} className="ml-2" />
+                Kirim via WhatsApp
+                <MessageCircle size={18} className="ml-2" />{" "}
+                {/* Ikon WhatsApp */}
               </button>
             </form>
           </div>

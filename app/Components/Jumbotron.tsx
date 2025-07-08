@@ -96,7 +96,7 @@ const Jumbotron = () => {
               />
             </p>
             <a
-              href="https://drive.google.com/file/d/1hSzs8deZxJ3dycqyXIy_ehvhihzjpIRi/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1PpUvihPyCtdwyKKgkec6c2Y1QvTMNS1Q/view?usp=sharing"
               className="bg-teal-500 text-white px-8 py-3 rounded-lg font-medium text-lg hover:bg-teal-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               CV SAYA

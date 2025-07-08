@@ -5,6 +5,8 @@ import Projects from "./Components/Projects";
 import Testimonials from "./Components/Testimonials";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Certificates from "./Components/Certificates";
+import { Certificate } from "crypto";
 
 export default function Home() {
   return (
@@ -13,7 +15,8 @@ export default function Home() {
       <Jumbotron />
       <Aboute />
       <Projects />
-      <Testimonials />
+      <Certificates />
+
       <Contact />
       <Footer />
     </>

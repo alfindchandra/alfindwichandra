@@ -68,10 +68,10 @@ const Navbar = () => {
               Proyek
             </a>
             <a
-              href="#skills"
+              href="#sertifikat"
               className="text-gray-700 hover:text-primary font-medium transition-colors duration-300"
             >
-              Keahlian
+              Sertifikat
             </a>
             <Link
               href="https://wa.me/6281382176161"

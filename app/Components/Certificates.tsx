@@ -66,7 +66,7 @@ export default function Certificates() {
 
   return (
     <section
-      id="certificates"
+      id="sertifikat"
       className="py-20 bg-gray-900 text-white min-h-screen"
     >
       <div className="container mx-auto px-4">

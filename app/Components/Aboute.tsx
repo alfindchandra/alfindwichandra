@@ -8,10 +8,13 @@ const AboutMe = () => {
     { name: "JavaScript", category: "frontend" },
     { name: "React", category: "frontend" },
     { name: "PHP", category: "backend" },
+    { name: "API", category: "backend" },
+    { name: "Flutter", category: "frontend" },
     { name: "GIT", category: "tools" },
     { name: "Github", category: "tools" },
     { name: "Responsive Design", category: "frontend" },
-    { name: "Terminal", category: "tools" },
+    { name: "Tailwind CSS", category: "frontend" },
+    { name: "Laravel", category: "backend" },
   ];
 
   return (

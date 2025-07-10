@@ -9,6 +9,17 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 4,
+      title: "Absensi Karyawan",
+      description:
+        "web site ini untuk memudahkan untuk melakukan absensi karyawan",
+      image: "/images/flutter.png",
+      category: "web app",
+      tags: ["Flutter", "API", "Laravel"],
+      demoUrl: "https://example.com/task-app",
+      githubUrl: "https://github.com/alfindchandra",
+    },
+    {
       id: 1,
       title: "Inovasi Adiwarna Raya",
       description:
@@ -41,17 +52,7 @@ export default function Projects() {
       demoUrl: "https://example.com/blog",
       githubUrl: "https://github.com/alfindchandra/MazabutaGrub",
     },
-    {
-      id: 4,
-      title: "joki tugas online",
-      description:
-        "web site ini untuk memudahkan pekerja untuk menyelesaikan pekerjaan di rumah. ",
-      image: "/images/joki1.png",
-      category: "web",
-      tags: ["React", "Next.js", "Tailwind CSS"],
-      demoUrl: "https://example.com/task-app",
-      githubUrl: "https://github.com/alfindchandra/Jojone_jokitugasonline",
-    },
+
     {
       id: 5,
       title: "Toko Bu Joni",
@@ -124,7 +125,7 @@ export default function Projects() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-100 mb-2">
                   {project.title}
                 </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>

@@ -102,35 +102,43 @@ const Navbar = () => {
               : "opacity-0 max-h-0 overflow-hidden"
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#home"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-teal-50 font-medium transition-colors duration-300"
-            >
-              Beranda
-            </a>
-            <a
-              href="#about"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-teal-50 font-medium transition-colors duration-300"
-            >
-              Tentang
-            </a>
-            <a
-              href="#projects"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-teal-50 font-medium transition-colors duration-300"
-            >
-              Proyek
-            </a>
-            <a
-              href="#skills"
-              className="block px-3 py-2 rounded-lg text-gray-700 hover:text-primary hover:bg-teal-50 font-medium transition-colors duration-300"
-            >
-              Keahlian
-            </a>
-            <button className="w-full mt-2 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-primary transform hover:scale-105 hover:rotate-1 transition-all duration-300 shadow-[0_4px_20px_rgba(20,184,166,0.3)] hover:shadow-[0_8px_30px_rgba(20,184,166,0.5)]">
-              Hubungi Saya
-            </button>
-          </div>
+          <nav className="px-4 py-3 sm:px-6 md:px-8 lg:px-10">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-1 sm:space-y-0">
+                <a
+                  href="#home"
+                  className="block px-3 py-2 rounded-lg text-gray-700 hover:text-teal-600 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 font-medium transition-colors duration-300"
+                >
+                  Beranda
+                </a>
+                <a
+                  href="#about"
+                  className="block px-3 py-2 rounded-lg text-gray-700 hover:text-teal-600 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 font-medium transition-colors duration-300"
+                >
+                  Tentang
+                </a>
+                <a
+                  href="#projects"
+                  className="block px-3 py-2 rounded-lg text-gray-700 hover:text-teal-600 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 font-medium transition-colors duration-300"
+                >
+                  Proyek
+                </a>
+                <a
+                  href="#sertifikat"
+                  className="block px-3 py-2 rounded-lg text-gray-700 hover:text-teal-600 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 font-medium transition-colors duration-300"
+                >
+                  Sertifikat
+                </a>
+              </div>
+
+              <Link
+                href="https://wa.me/6281382176161"
+                className="inline-flex items-center justify-center mt-4 sm:mt-0 px-6 py-3 bg-teal-500 text-white rounded-full font-semibold shadow-md hover:bg-teal-600 transform hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-75 active:bg-teal-700"
+              >
+                Hubungi Saya
+              </Link>
+            </div>
+          </nav>
         </div>
       </div>
     </nav>

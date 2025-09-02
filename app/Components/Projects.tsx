@@ -75,6 +75,37 @@ export default function Projects() {
       demoUrl: "https://example.com/crypto-tracker",
       githubUrl: "https://github.com/alfindchandra/",
     },
+    {
+      id: 7,
+      title: "POS Kasir Toko Online",
+      description:
+        "Web Site ini saya buat untuk memudahkan pelanggan untuk membeli makanan dan minuman di Toko saya.",
+      image: "/images/kasir.png",
+      category: "web",
+      tags: ["Laravel"],
+      demoUrl: "https://example.com/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra/atikstore",
+    },
+    {
+      id: 8,
+      title: "Sekolah Online",
+      description: "untuk memudahkan siswa untuk belajar di rumah. ",
+      image: "/images/sekolah.png",
+      category: "web",
+      tags: ["nextjs"],
+      demoUrl: "https://example.com/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra",
+    },
+    {
+      id: 9,
+      title: "from antrian online",
+      description: "Untuk memudahkan pasien untuk melakukan antrian online. ",
+      image: "/images/antrian.png",
+      category: "web",
+      tags: ["laravel"],
+      demoUrl: "https://example.com/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra/drharyo",
+    },
   ];
 
   const filteredProjects =

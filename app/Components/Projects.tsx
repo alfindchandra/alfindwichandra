@@ -106,6 +106,26 @@ export default function Projects() {
       demoUrl: "https://example.com/crypto-tracker",
       githubUrl: "https://github.com/alfindchandra/drharyo",
     },
+    {
+      id: 10,
+      title: "CDC IKIP PGRI Bojonegoro",
+      description: "untuk memudahkan mencari lowongan kerja. ",
+      image: "/images/ikipstudy.png",
+      category: "web",
+      tags: ["laravel"],
+      demoUrl: "https://example.com/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra/cdc-ikip",
+    },
+    {
+      id: 11,
+      title: "Meksiko",
+      description: "untuk Oprasional meksiko",
+      image: "/images/meksiko.png",
+      category: "web",
+      tags: ["laravel"],
+      demoUrl: "https://example.com/crypto-tracker",
+      githubUrl: "https://github.com/alfindchandra/cdc-ikip",
+    },
   ];
 
   const filteredProjects =
